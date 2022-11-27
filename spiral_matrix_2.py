@@ -12,29 +12,31 @@ class Solution(object):
             col = 0
             val = 1
             if row == 0 and col == 0:
-                while col < n:
+                for i in range(col,n):
                     empty_matrix[row][col] = val
                     val +=1
                     col +=1
-            
-            if row == 0 and col == n-1:
-                while row < n:
+            if row == 0 and col == n:
+                col-= 1
+                row +=1
+                for i in range(row,n):
                     empty_matrix[row][col] = val
                     val +=1
                     row +=1
-            
-            if row == n-1 and col == n-1:
-                while col >= n:
+            if row == n and col == n-1:
+                row -= 1
+                col -=1
+                for i in range(col):
                     empty_matrix[row][col] = val
                     val +=1
                     col -=1  
-                    
+                 
             if row == n-1 and col ==0:
-                while row >= n:
+                row -=1
+                for i in range(row):
                     empty_matrix[row][col] = val
                     val +=1
                     row -=1  
-        
         fill(matrix,n)   
             
             
